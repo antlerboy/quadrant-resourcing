@@ -13,4 +13,5 @@ for path in target.rglob('*'):
             text=re.sub(r'url\(/(?!/)', 'url('+base+'/',text)
         path.write_text(text,encoding='utf-8')
 (target/'.nojekyll').touch()
+(target/'CNAME').write_text('m.quadrantresourcing.com\\n', encoding='ascii')
 print('Prepared',sum(p.is_file() for p in target.rglob('*')),'files for',base or '/')
